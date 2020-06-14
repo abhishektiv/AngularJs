@@ -13,7 +13,15 @@ function LunchCheckController($scope){
 	$scope.dishes = "";
 	$scope.ProcessThis = function(){
 		var dish = $scope.dishes
+		if (dish == ''){
+			$scope.message = "Please enter data first";
+		}
+
+		else{
 		var qty = dish.split(',');
+
+
+
 		if (qty.length > 3 ){
 
 			$scope.message = "Too much!";
@@ -21,6 +29,8 @@ function LunchCheckController($scope){
 		}else{
 			$scope.message = "Enjoy!";
 		}
+	}
+		
 	}
 }
 
